@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>List</title>
+</head>
+<body>
+    <div class="image">
+        <header>
+            <label routerLink="/">Register</label>
+        </header>
+        <h2 style="margin-top: -45px;margin-left: 30px;font-family: verdana;">Admin page</h2>
+        <div class="container">
+            <table style="width:95%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Aadhar Number</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of dataArr">
+                        <td><span>{{data.name}}</span></td>
+                        <td><span>{{data.age}}</span></td>
+                        <td><span>{{data.aadhar}}</span></td>
+                        <td><span>{{data.phone}}</span></td>
+                        <td><span>{{data.address}}</span></td>
+                        <td><span class="custom"><i routerLink="/update" (click)="edit(data)" style="cursor: pointer;"
+                                    class="far fa-edit"></i></span></td>
+                        <td><span class="custom1"><i (click)="delete(data)" style="cursor: pointer;" class="fas fa-trash"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

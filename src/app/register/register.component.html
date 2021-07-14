@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="image">
+        <header>
+            <label routerLink="/submit">List Of Users</label>
+        </header>
+        <h2 style="margin-top: -45px;margin-left: 20px;">Admin page</h2>
+        <div class="container">
+            <h2 style="text-align: center;padding-top: 20px;">Register</h2>
+            <form [formGroup]="register" (ngSubmit)="registerFunc()">
+                <label>Name:</label><br>
+                <div style="text-align: center;">
+                    <input type="text" formControlName="name" /><br>
+                    <span *ngIf="name?.errors?.required && name?.touched">This field can't be empty</span>
+                    <span *ngIf="name?.invalid && name?.errors?.pattern">This field contains only alphabets</span>
+                </div><br>
+                <label>Aadhar Number:</label><br>
+                <div style="text-align: center;">
+                    <input type="text" formControlName="aadhar" /><br>
+                    <span *ngIf="aadhar?.errors?.required && aadhar?.touched">This field can't be empty</span>
+                    <span *ngIf="aadhar?.invalid && aadhar?.errors?.pattern">This field contains maximum 12
+                        numbers</span>
+                </div><br>
+                <label>Age:</label><br>
+                <div style="text-align: center;">
+                    <input type="text" formControlName="age" /><br>
+                    <span *ngIf="age?.errors?.required && age?.touched">This field can't be empty</span>
+                    <span *ngIf="age?.invalid && age?.errors?.pattern">This field contains Minimum 2 letters</span>
+                </div><br>
+                <label>PhoneNo:</label><br>
+                <div style="text-align: center;">
+                    <input type="text" formControlName="phone" /><br>
+                    <span *ngIf="phone?.errors?.required && phone?.touched">This field can't be empty</span>
+                    <span *ngIf="phone?.invalid && phone?.errors?.pattern">This field contains Maximum 10 numbers</span>
+                </div><br>
+                <label>Address:</label><br>
+                <div style="text-align: center;">
+                    <textarea rows="6" cols="22" formControlName="address"></textarea><br>
+                    <span *ngIf="address?.errors?.required && address?.touched">This field can't be empty</span>
+                    <span *ngIf="address?.invalid && address?.errors?.pattern">This field contains minimum 10
+                        characters</span>
+                </div><br><br>
+                <div style="text-align: center">
+                    <input type="submit" [disabled]="register.invalid" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

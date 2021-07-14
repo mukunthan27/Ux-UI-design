@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin-top: -10px;
+    margin-left: -9px;
+    margin-right: -7.5px;
+    font-family: verdana;
+}
+.image{
+    background: url('../../assets/img1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    font-family: verdana;
+}
+header{
+    background-color:#f2f2f2;
+    padding-top:20px;
+    text-align: right;
+    padding-bottom: 20px;
+}
+header label{
+    margin-right: 30px;
+    text-align:right;
+    cursor: pointer;
+}
+header label:hover{
+    border-bottom: 2px solid black;
+    padding-bottom: 8px;
+}
+.container{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    width: 350px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container label{
+    padding:12px 0 12px 12%;
+    display:inline-block;
+}
+.container span{
+    font-size: 12px;
+}
+.container form{
+    margin-top: 30px;
+}
+.container input[type="text"],textarea{
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.container input[type="text"]:focus,textarea:focus{
+    border-color: lightblack;
+    outline: none;
+}
+textarea{
+    resize: none;
+}
+input[type="submit"]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: #45a049;
+}
+@media(max-width: 380px){
+    .container{
+        width:80%;
+    }
+}
